@@ -5,7 +5,7 @@ import { useCountdown } from "./hooks/useCountdown"
 const ExpiredNotice = () => {
   return (
     <div className="expired-notice">
-      <span>🥳</span>
+      <span>Nu är dagen här! 🥳</span>
     </div>
   )
 }
@@ -16,7 +16,7 @@ const ShowCounter = ({ days, hours, minutes, seconds }) => {
       <div className="countdown-wrapper">
         <DateTimeDisplay value={days} type={"Days"} isDanger={days <= 3} />
         <p>:</p>
-        <DateTimeDisplay value={hours} type={"Hours"} isDanger={false} />
+        <DateTimeDisplay value={hours + 1} type={"Hours"} isDanger={false} />
         <p>:</p>
         <DateTimeDisplay value={minutes} type={"Mins"} isDanger={false} />
         <p>:</p>

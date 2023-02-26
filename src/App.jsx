@@ -4,16 +4,18 @@ import CountdownTimer from "./components/CountdownTimer"
 import "./App.css"
 
 export default function App() {
-  const REUNION_COUNTDOWN = 89.688 * 24 * 60 * 60 * 1000
-  const NOW_IN_MS = new Date().getTime()
+  const PRESENT_DATE = new Date().getTime()
+  const REUNION_DATE = new Date("5/27/2023").getTime()
+  const TIME_DIFFERENCE = PRESENT_DATE - REUNION_DATE
+  const REUNION_COUNTDOWN = TIME_DIFFERENCE * -1
 
-  const dateTimeAfterThreeDays = NOW_IN_MS + REUNION_COUNTDOWN
+  const reunion = PRESENT_DATE + REUNION_COUNTDOWN
 
   return (
     <div className="App">
-      <CountdownTimer targetDate={dateTimeAfterThreeDays} />
+      <CountdownTimer targetDate={reunion} />
     </div>
   )
 }
 
-// The content of this project is all copied from https://blog.greenroots.info/how-to-create-a-countdown-timer-using-react-hooks
+// The content of this project is copied from https://blog.greenroots.info/how-to-create-a-countdown-timer-using-react-hooks
